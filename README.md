@@ -15,3 +15,18 @@
 - Bottlenecks
 - Unnecessary work
 - Duplicated work
+
+### Tips for Communication 
+- Drive through the problem
+- Show your thought process
+- Think out loud
+- Ask questions
+- Propose an initial solution, but also think about its issues
+- Talk whole coding, if  possible explain what you are doing
+- Do not use code to explain your thought process; use examples 
+- Be open about mistakes
+- Admit if you have heard the problem before
+- Keep trying 
+- Listen to the interviewer
+- Make sure you capture the value of their hints
+- Follow your interviewer's path  
