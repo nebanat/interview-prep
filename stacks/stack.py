@@ -20,12 +20,11 @@ class Stack:
             self.top = self.top.next
             self.stack_size -= 1
             return data
-        raise Exception("Stack is empty")
 
     def peek(self):
         if self.top:
             return self.top.data
-        raise Exception("Stack is empty")
+        # raise Exception("Stack is empty")
     
     def size(self):
         return self.stack_size
