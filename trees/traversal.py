@@ -1,6 +1,3 @@
-from argparse import ArgumentError
-
-
 class Node:
     def __init__(self, data) -> None:
         self.data = data
