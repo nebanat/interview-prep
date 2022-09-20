@@ -1,0 +1,2 @@
+def minRewards(scores):
+    pass
