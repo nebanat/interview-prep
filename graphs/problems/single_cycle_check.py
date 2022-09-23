@@ -1,6 +1,4 @@
 # [2, 3, 1, -4, -4, 2]
-import re
-
 
 def has_single_cycle(array):
     numElementVisited = 0

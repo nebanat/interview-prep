@@ -13,35 +13,47 @@
 # 4. make sure to keep a count of the explored islands (land surrounded by water)
 # 5. return the count
 
+# constraints
+# 1. make sure the node you are within the array bounds
+# 2. make sure you have not visited that node already
+# 3. make sure the node is not water
 
 def island_count(grid):
-    visited = {}
+    # time complexity: O(r*c)
+    # space complexity: O(r*C)
     count = 0
+    visited = {}
+
     for r in range(len(grid)):
         for c in range(len(grid[0])):
-            if explore(grid, r, c, visited):
+            if explore_island(grid, r, c, visited):
                 count += 1
-    return count
+    return count 
 
-def explore(grid, r, c, visited):
-    rowInbounds = 0 <= r < len(grid)
-    columnInbounds = 0 <= c < len(grid[0])
+def explore_island(grid, r, c, visited):
+    cur_node = str(r) + ',' + str(c)
+    rowBound = 0 <= r < len(grid)
+    columnBound = 0 <= c < len(grid[0])
 
-    if not rowInbounds or not columnInbounds:
+    if not rowBound or not columnBound:
+        return False 
+
+    if cur_node in visited:
         return False
     
     if grid[r][c] == 'W':
         return False
     
-    pos = f'{r},{c}'
-    if pos in visited:
-        return False
-    
-    visited[pos] = True
-    explore(grid, r - 1, c, visited) # up
-    explore(grid, r + 1, c, visited) # down
-    explore(grid, r, c - 1, visited) # left
-    explore(grid, r, c + 1, visited) # right 
+    visited[cur_node] = True
+
+    # top neighbor (r-1, c)
+    explore_island(grid, r - 1, c , visited)
+    # bottom neighbor 
+    explore_island(grid, r + 1, c, visited)
+    # right neighbor
+    explore_island(grid, r, c + 1, visited)
+    # left neighbor 
+    explore_island(grid, r, c - 1, visited)
 
     return True
 
